@@ -1,3 +1,5 @@
+<%= javascript_include_tag "application" %>
+<% if true %>
 <% p = @post %>
 <% p.name       = params[:name]%>
 <% p.heart_beat = params[:heart_beat] %>
@@ -6,6 +8,4 @@
 <% if !p.name.nil? %>
   <% p.save! %>
 <% end %>
-<% if false %>
-
 <% end %>

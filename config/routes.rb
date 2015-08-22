@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resps
   resources :posts
   resources :tests
   get 'users/new'

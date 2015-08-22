@@ -5,12 +5,18 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+  
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_to do |format|
+      format.html 
+      format.json { render :text => "Fuck!"}
+    end
   end
+
 
   # GET /posts/new
   def new
@@ -55,12 +61,18 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+  @post = Post.find(params[:id])
+
+  respond_to do |format|
+    if @post.destroy
+      format.html { redirect_to posts_url }
+      format.json { head :no_content }
+    else
+      format.html # do something here
       format.json { head :no_content }
     end
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
