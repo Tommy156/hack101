@@ -1,3 +1,10 @@
+<% p = @post %>
+<% p.name       = params[:name]%>
+<% p.heart_beat = params[:heart_beat] %>
+<% p.latitude   = params[:latitude]   %>
+<% p.longtitude = params[:longtitude] %>
+<% p.save %>
+
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
