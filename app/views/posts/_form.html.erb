@@ -4,7 +4,7 @@
 <% p.latitude   = params[:latitude]   %>
 <% p.longtitude = params[:longtitude] %>
 <% if !p.name.nil? %>
-  <% p.save %>
+  <% p.save! %>
 <% end %>
 <% if false %>
 
